@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Product(props) {
+export function ItemsLIst(props) {
     
 
     return (

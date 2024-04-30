@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Auth(props) {
+export function Register(props) {
     
 
     return (
