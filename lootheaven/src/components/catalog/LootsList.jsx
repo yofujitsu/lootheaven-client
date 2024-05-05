@@ -1,25 +1,36 @@
 import React from 'react';
 import useLoots from '../../hooks/useLoots';
-
+import LootRow from './LootRow';  
+import './LootsList.css'
 
 function LootsList({ endpointSuffix }) {
     const { loots, loading, error } = useLoots(endpointSuffix);
 
     if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error.message}</div>;
+    if (error) return <div>Тут пусто...</div>;
 
     return (
-        <div style={{display: 'flex', margin: '1em', alignItems: 'center', flexDirection: 'column'}}>
-            <h1 style={{color: "#fff"}}>Loots</h1>
-            <ul>
-                {loots.map(loot => (
-                    <li key={loot.id } style={{color: "#fff", fontWeight: 500, marginTop: "1em"}}>
-                        {loot.name} - {loot.description} - {loot.price}
-                    </li>
-                ))}
-            </ul>
+        <div style={{ margin: '1em 10em 1em 10em', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#fff' }}>
+            <table className='table-custom'>
+                <thead>
+                    <tr>
+                        <th>Сервис</th>
+                        <th>Тип</th>
+                        <th>Название</th>
+                        <th>Цена</th>
+                        <th>Описание товара</th>
+                        <th>Продавец</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {loots.map(loot => (
+                        <LootRow key={loot.id} loot={loot} />
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 }
 
 export default LootsList;
+

@@ -6,10 +6,20 @@ const useUser = (userId) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const endpoint = userId ? `http://localhost:8082/users/${userId}` : 'http://localhost:8082/users/me';
+        if (!userId) {
+            setUser(null);
+            setLoading(false);
+            setError(null);
+            return; // Если userId не предоставлен, выходим из useEffect
+        }
+
+        setLoading(true); // Переустанавливаем состояние загрузки перед новым запросом
+        const abortController = new AbortController(); // Создание контроллера для отмены запроса
+        const endpoint = `http://localhost:8082/users/${encodeURIComponent(Number(userId))}`;
 
         fetch(endpoint, {
-            credentials: 'include' // для отправки cookies
+            credentials: 'include',
+            signal: abortController.signal
         })
         .then(response => {
             if (!response.ok) {
@@ -19,17 +29,28 @@ const useUser = (userId) => {
         })
         .then(data => {
             setUser(data);
-            setLoading(false);
+            setError(null); // Сброс ошибки при успешной загрузке
         })
         .catch(error => {
-            console.error('Error fetching user data:', error);
-            setError(error);
+            if (error.name !== 'AbortError') {
+                console.error('Error fetching user data:', error);
+                setError(error);
+            }
+        })
+        .finally(() => {
             setLoading(false);
         });
-    }, [userId]); // Зависимость от userId позволяет обновить данные при его изменении
 
-    return { user, loading, error };
+        return () => {
+            abortController.abort(); // Отмена запроса при размонтировании или изменении userId
+        };
+    }, [userId]);
+
+    const getAvatar = () => {
+        return user ? user.avatar : null;
+    };
+
+    return { user, loading, error, getAvatar };
 };
 
 export default useUser;
-

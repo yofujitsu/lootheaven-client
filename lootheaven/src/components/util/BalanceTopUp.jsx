@@ -12,11 +12,11 @@ function BalanceTopUp() {
         if (window.confirm("Вы точно хотите пополнить баланс?")) {
             fetch(`http://localhost:8082/users/balance?amount=${amount}`, {
                 method: 'PATCH',
-                credentials: 'include', // Убедитесь, что cookies и другие учетные данные отправляются с запросом, если это необходимо
+                credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ amount }) // Если ваш API ожидает JSON в теле запроса
+                body: JSON.stringify({ amount }) 
             })
             .then(response => {
                 if (!response.ok) {
@@ -26,6 +26,7 @@ function BalanceTopUp() {
             })
             .then(data => {
                 alert('Баланс успешно пополнен!');
+                window.location.href = "http://localhost:5173/me"; 
             })
             .catch(error => {
                 console.error('Error updating balance:', error);

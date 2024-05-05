@@ -10,7 +10,7 @@ import { Login } from './components/auth/Login'
 import PrivateRoute from './components/auth/PrivateRoute'
 import LootsList from './components/catalog/LootsList'
 import Footer from './components/navbar/Footer'
-
+import User from './components/user/User'
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
           <Route path='/loots' element={<LootsList endpointSuffix={""} />} />
           <Route path='/loots/create' element={<PrivateRoute><CreateItem /></PrivateRoute>} />
           <Route path='/me' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
-          <Route path='/users/:id' element={<UserProfile />} />
+          <Route path='/users/:id' element={<User/>} />
           <Route path='/admin' element={<PrivateRoute><AdminTable /></PrivateRoute>} />
           {/* <Route path="*" element={<Navigate to="/" />} /> */}
         </Routes>

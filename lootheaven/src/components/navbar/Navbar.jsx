@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
-import { useAuth } from '../auth/AuthContext'; // Убедитесь, что путь указан правильно
+import { useAuth } from '../auth/AuthContext'; 
 import { Login } from '../auth/Login';
 import { Logout } from '../auth/Logout';
-import useUser from '../../hooks/useUser';
+import useUserMe from '../../hooks/useUserMe';
 
 export function Navbar() {
     const { isAuthenticated } = useAuth(); 
-    const {user} = useUser();
+    const {user} = useUserMe();
 
     return (
         <nav className="navbar navbar-expand-lg sticky-top" style={{ backgroundColor: '#fff', background: '#5865F2' }}>

@@ -5,7 +5,7 @@ import {useAuth} from './AuthContext'
 function PrivateRoute({children}) {
     const {isAuthenticated} = useAuth()
     console.log(isAuthenticated);
-    return isAuthenticated ? children : <Navigate to="http://localhost:8082/login"/>
+    return isAuthenticated ? children : <Navigate to="/me"/>
 }
 
 export default PrivateRoute
