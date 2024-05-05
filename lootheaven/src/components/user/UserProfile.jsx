@@ -4,6 +4,7 @@ import BalanceTopUp from '../util/BalanceTopUp';
 
 function UserProfile({ userId }) {
     const { user, loading, error } = useUser(userId);
+    console.log(userId);
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error.toString()}</div>;

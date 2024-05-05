@@ -18,14 +18,14 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/loots' element={<LootsList endpointSuffix={""} />} />
           <Route path='/loots/create' element={<PrivateRoute><CreateItem /></PrivateRoute>} />
           <Route path='/me' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
-          <Route path='/users/:id' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
+          <Route path='/users/:id' element={<UserProfile />} />
           <Route path='/admin' element={<PrivateRoute><AdminTable /></PrivateRoute>} />
-          <Route path="*" element={<Navigate to="/" />} />
+          {/* <Route path="*" element={<Navigate to="/" />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>

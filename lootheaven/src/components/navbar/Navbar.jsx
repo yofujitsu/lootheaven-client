@@ -14,7 +14,7 @@ export function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg sticky-top" style={{ backgroundColor: '#fff', background: '#5865F2' }}>
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/" style={{ color: '#fff' }}><b>LootHeaven</b></Link>
+                <Link className="navbar-brand" to="/home" style={{ color: '#fff' }}><b>LootHeaven</b></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
