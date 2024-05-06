@@ -1,67 +1,49 @@
-// Imports
-import React, { useEffect, useState } from 'react';
-import axios from 'axios'; // Библиотека для HTTP запросов
-import { Table } from 'react-bootstrap'; // Используем таблицу из Bootstrap
+import React, { useState, useEffect } from 'react';
+import LootsList, { productSVGs } from './LootsList';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const Catalog = () => {
-  const [products, setProducts] = useState([]);
-  const [users, setUsers] = useState({});
 
-  // Загрузка данных продуктов
-  useEffect(() => {
-    axios.get('http://localhost:8082/loots')
-      .then(response => {
-        setProducts(response.data);
-        // Загрузка аватарок пользователей
-        response.data.forEach(product => {
-          if (!users[product.creatorId]) { // Загрузить данные пользователя, если они ещё не загружены
-            axios.get(`http://localhost:8082/users/${product.creatorId}`)
-              .then(userResponse => {
-                setUsers(prevUsers => ({
-                  ...prevUsers,
-                  [product.creatorId]: userResponse.data.avatar
-                }));
-              })
-              .catch(error => console.error('Error loading user data:', error));
-          }
-        });
-      })
-      .catch(error => console.error('Error loading products:', error));
-  }, []);
+const types = ["ACCOUNT", "KEY", "ITEM", "CURRENCY", "GAME_PASS", "OTHER"];
 
-  return (
-    <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>Product Name</th>
-          <th>Type</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Description</th>
-          <th>Creator</th>
-        </tr>
-      </thead>
-      <tbody>
-        {products.map(product => (
-          <tr key={product.id}>
-            <td>{product.productName}</td>
-            <td>{product.type}</td>
-            <td>{product.name}</td>
-            <td>${product.price}</td>
-            <td>{product.description}</td>
-            <td>
-              {users[product.creatorId] && (
-                <a href={`/users/${product.creatorId}`}>
-                  <img src={users[product.creatorId]} alt="Avatar" style={{ width: '30px', height: '30px', borderRadius: '50%' }} />
-                </a>
-              )}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </Table>
-  );
-};
+function Catalog({ endpointSuffix }) {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [selectedProduct, setSelectedProduct] = useState(new URLSearchParams(location.search).get('game') || '');
+    const [selectedType, setSelectedType] = useState('');
+
+    useEffect(() => {
+      // Конструируем URL с параметрами
+      const queryParams = new URLSearchParams();
+      if (selectedProduct) queryParams.set('game', selectedProduct);
+      if (selectedType) queryParams.set('type', selectedType);
+      navigate(`/loots?${queryParams.toString()}`);
+    }, [selectedProduct, selectedType, navigate]);
+
+    const handleProductChange = (event) => {
+        setSelectedProduct(event.target.value);
+    };
+
+    const handleTypeChange = (event) => {
+        setSelectedType(event.target.value);
+    };
+
+    return (
+        <div style={{ margin: '1em 10em 1em 10em', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#fff' }}>
+            <select onChange={handleProductChange} value={selectedProduct}>
+                <option value="">Все сервисы</option>
+                {Object.keys(productSVGs).map(productName => (
+                    <option key={productName} value={productName}>{productName}</option>
+                ))}
+            </select>
+            <select onChange={handleTypeChange} value={selectedType}>
+                <option value="">Все типы</option>
+                {types.map(type => (
+                    <option key={type} value={type}>{type}</option>
+                ))}
+            </select>
+            <LootsList endpointSuffix={endpointSuffix} selectedProduct={selectedProduct} selectedType={selectedType} />
+        </div>
+    );
+}
 
 export default Catalog;
-

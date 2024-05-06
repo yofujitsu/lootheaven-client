@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { useAuth } from '../auth/AuthContext'; 
-import { Login } from '../auth/Login';
 import { Logout } from '../auth/Logout';
 import useUserMe from '../../hooks/useUserMe';
 
@@ -27,8 +26,8 @@ export function Navbar() {
                     <ul className="navbar-nav ml-auto">
                         {!isAuthenticated ? (
                             <li className="nav-item">
-                                <button className="btn btn-dark" type="button" onClick={Login}>
-                                    <a className="nav-link" style={{ color: '#fff', alignItems: 'center' }}>
+                                <button className="btn btn-dark" type="button">
+                                    <a className="nav-link" href='http://localhost:8082/oauth2/authorization/discord' style={{ color: '#fff', alignItems: 'center' }}>
                                         <b>Войти с Discord</b>
                                         <FontAwesomeIcon icon={faDiscord} style={{ fontSize: '25px', color: 'white', marginLeft: '10px' }} />
                                     </a>

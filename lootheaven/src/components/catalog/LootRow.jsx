@@ -1,7 +1,7 @@
 import React from 'react';
 import useUser from '../../hooks/useUser';
 
-function LootRow({ loot }) {
+function LootRow({ loot, svg }) {
     const { user, loading, error } = useUser(loot.creatorId);
 
     if (loading) return <tr><td colSpan="6">Loading...</td></tr>;
@@ -9,7 +9,7 @@ function LootRow({ loot }) {
 
     return (
         <tr>
-            <td>{loot.productName}</td>
+            <td>{svg}</td>
             <td>{loot.type}</td>
             <td>{loot.name}</td>
             <td>{loot.price}</td>
@@ -24,3 +24,4 @@ function LootRow({ loot }) {
 }
 
 export default LootRow;
+

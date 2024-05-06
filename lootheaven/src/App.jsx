@@ -8,9 +8,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import UserProfile from './components/user/UserProfile'
 import { Login } from './components/auth/Login'
 import PrivateRoute from './components/auth/PrivateRoute'
-import LootsList from './components/catalog/LootsList'
 import Footer from './components/navbar/Footer'
 import User from './components/user/User'
+import { Anchor } from './components/util/Anchor'
+import Catalog from './components/catalog/Catalog'
+
 
 function App() {
   return (
@@ -20,12 +22,13 @@ function App() {
         <Routes>
           <Route path='/home' element={<Home />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/loots' element={<LootsList endpointSuffix={""} />} />
+          <Route path='/loots' element={<PrivateRoute><Catalog endpointSuffix={''}/></PrivateRoute>} />
           {/* <Route path='/loots/create' element={<PrivateRoute><CreateItem /></PrivateRoute>} /> */}
           <Route path='/me' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
-          <Route path='/users/:id' element={<User/>} />
+          <Route path='/users/:id' element={<PrivateRoute><User/></PrivateRoute>} />
           <Route path='/admin' element={<PrivateRoute><AdminTable /></PrivateRoute>} />
-          {/* <Route path="*" element={<Navigate to="/" />} /> */}
+          {<Route path="*" element={<Navigate to='/error'/>} />}
+          <Route path="/error" element={<Anchor/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

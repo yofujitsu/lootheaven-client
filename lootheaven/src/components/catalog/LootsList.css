@@ -26,3 +26,8 @@
 .table-custom tbody tr:hover {
     background-color: rgba(20, 16, 16, 0.2); /* Фон при наведении */
 }
+
+svg {
+    color: #fff;
+    width: 40px;
+}

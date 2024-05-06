@@ -14,70 +14,70 @@ export function Home() {
                 title="Dota 2"
                 image={'https://clan.cloudflare.steamstatic.com/images/3703047/60586d77d8c2ddbddf805451c244309a7733e14e.png'}
                 description="Crownfall уже в игре"
-                link="/loots?game=dota2"
+                link="/loots?game=Dota+2"
                 
             />
             <CatalogCard
                 title="World Of Warcraft"
                 image={'https://www.techpowerup.com/img/c0H9S9TL4DGvUX8o.jpg'}
                 description="Dragonflight уже в игре"
-                link="/loots?game=wow"
+                link="/loots?game=Wow"
                 
             />
             <CatalogCard
                     title="Valorant"
                     image={'https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt46ddfc6450029d1e/65fcba815caa4b62ec60dbca/EP8_Act_2_Article_1920x1080_Clove.jpg'}
                     description="Radiant Points"
-                    link="/loots?game=valorant"
+                    link="/loots?game=Valorant"
                     
             />
             <CatalogCard
                 title="CS 2"
                 image={'https://sun1-23.userapi.com/impg/H_eFNe5jFaWfWJRYYEEdizDFczDZRKbzXXoPOA/TKRdeNVFnXs.jpg?size=1080x1080&quality=96&sign=fbe09816bcff50d802f24819cf5a26b9&c_uniq_tag=I90brpNyusR_O2-PNWhwgY5cqWKYcxsQuLztRnsKrco&type=album'}
                 description="Prime Аккаунты по низким ценам"
-                link="/loots?game=cs2"
+                link="/loots?game=CS"
                 
             />
             <CatalogCard
                 title="Genshin Impact"
                 image={'https://files.vgtimes.ru/gallery/main/171129/1601320321_4312.jpeg'}
                 description="Дешевые самоцветы и аккаунты"
-                link="/loots?game=genshin"
+                link="/loots?game=Genshin+Impact"
                 
             />
             <CatalogCard
                     title="Minecraft"
                     image={'https://www.minecraft.net/content/dam/games/minecraft/screenshots/MCV_TrickyTrials_editorial_1170x500.jpg.transform/minecraft-image-large/image.jpg'}
                     description="Лицензионные аккаунты Microsoft"
-                    link="/loots?game=minecraft"
+                    link="/loots?game=Minecraft"
                     
             />
             <CatalogCard
                     title="Honkai: Star Rail"
                     image={'https://3dnews.ru/assets/external/illustrations/2023/03/24/1084002/0.jpg'}
                     description="Осколки звёзд"
-                    link="/loots?game=starrail"
+                    link="/loots?game=Honkai+Star+Rail"
                     
             />
             <CatalogCard
                     title="Helldivers 2"
                     image={'https://i.playground.ru/p/0uSTk9VCXN_Mvb2Hp7_KDw.jpeg'}
                     description="Новая Экшен-РПГ"
-                    link="/loots?game=helldivers"
+                    link="/loots?game=Helldivers"
                     
             />
             <CatalogCard
                     title="Roblox"
                     image={'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2021/12/roblox-2551077.jpg?tf=3840x'}
                     description="Robux"
-                    link="/loots?game=roblox"
+                    link="/loots?game=Roblox"
                     
             />
             <CatalogCard
                     title="Fortnite"
                     image={'https://cdn1.epicgames.com/offer/fn/25BR_S25_EGS_Launcher_Blade_2560x1440_2560x1440-ce7ec00a4a4e53bfe089a2afa1f03acb'}
                     description="V-баксы и аккаунты"
-                    link="/loots?game=fortnite"
+                    link="/loots?game=Fortnite"
                     
             />
             </div>
@@ -87,35 +87,35 @@ export function Home() {
                 title="Steam"
                 image={'https://cybersport.metaratings.ru/storage/images/5a/11/5a11ad1580564da936f4cb506846d49c.jpg'}
                 description="Покупай игры, недоступные в РФ"
-                link="/loots?game=steam"
+                link="/loots?game=Steam"
                 
             />
             <CatalogCard
                 title="Blizzard"
                 image={'https://jolstatic.fr/vc/0/0/11/604/137003.jpg'}
                 description="Аккаунты Blizzard"
-                link="/loots?game=steamwallet"
+                link="/loots?game=Battlenet"
                 
             />
             <CatalogCard
                     title="Chat GPT"
                     image={'https://raw.githubusercontent.com/shanlior/ExplorationConsciousRL/master/data/logo.jpg'}
                     description="Аккаунты Chat Gpt 4 Plus"
-                    link="/loots?game=gpt"
+                    link="/loots?game=Gpt"
                     
             />
             <CatalogCard
                 title="Spotify Premium"
                 image={'https://i.pinimg.com/originals/0f/30/0d/0f300da5c3b0cce0718db1590342f6ee.jpg'}
                 description="Аккаунты Spotify Premium"
-                link="/loots?game=spotify"
+                link="/loots?game=Spotify"
                 
             />
             <CatalogCard
                 title="Discord"
                 image={'https://img.ggsel.ru/4134963/original/AUTOxAUTO/p1_4134963_3d6763b0.webp'}
                 description="Баннеры и Подписка Nitro"
-                link="/loots?game=nitro"
+                link="/loots?game=Discord"
                 
             />
             </div>
