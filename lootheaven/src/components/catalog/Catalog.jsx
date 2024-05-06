@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LootsList, { productSVGs } from './LootsList';
 import { useLocation, useNavigate } from 'react-router-dom';
+import './Catalog.css'
 
 
 const types = ["ACCOUNT", "KEY", "ITEM", "CURRENCY", "GAME_PASS", "OTHER"];
@@ -29,18 +30,20 @@ function Catalog({ endpointSuffix }) {
 
     return (
         <div style={{ margin: '1em 10em 1em 10em', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#fff' }}>
-            <select onChange={handleProductChange} value={selectedProduct}>
-                <option value="">Все сервисы</option>
-                {Object.keys(productSVGs).map(productName => (
-                    <option key={productName} value={productName}>{productName}</option>
-                ))}
+          <div className='col'>
+          <select onChange={handleProductChange} value={selectedProduct} className="select-custom" style={{marginRight: '1em'}}>
+              <option value="">Все сервисы</option>
+              {Object.keys(productSVGs).map(productName => (
+                  <option key={productName} value={productName}>{productName}</option>
+              ))}
             </select>
-            <select onChange={handleTypeChange} value={selectedType}>
+            <select onChange={handleTypeChange} value={selectedType} className="select-custom">
                 <option value="">Все типы</option>
                 {types.map(type => (
                     <option key={type} value={type}>{type}</option>
                 ))}
             </select>
+          </div>
             <LootsList endpointSuffix={endpointSuffix} selectedProduct={selectedProduct} selectedType={selectedType} />
         </div>
     );

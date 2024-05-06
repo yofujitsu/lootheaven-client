@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Balance.css'
 
 function BalanceTopUp() {
     const [amount, setAmount] = useState('');
@@ -36,15 +37,15 @@ function BalanceTopUp() {
     };
 
     return (
-        <div className="container mt-5">
-            <h2 className="mb-3">Пополнение баланса</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="amountInput" className="form-label">Введите сумму для пополнения:</label>
+        <div className="mt-3">
+            <form onSubmit={handleSubmit} className="form-inline">
+                <div className="input-group mb-3">
+                    <label htmlFor="amountInput" className="form-label sr-only">Сумма</label>
                     <input
                         type="number"
                         className="form-control"
                         id="amountInput"
+                        placeholder="Пополнить баланс"
                         value={amount}
                         onChange={handleInputChange}
                         min="0.01"
@@ -52,7 +53,11 @@ function BalanceTopUp() {
                         required
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Пополнить баланс</button>
+                <div className="col mb-3">
+                    <button type="submit" className="btn btn-success">
+                        <span>+</span>
+                    </button>
+                </div>
             </form>
         </div>
     );

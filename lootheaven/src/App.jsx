@@ -12,6 +12,9 @@ import Footer from './components/navbar/Footer'
 import User from './components/user/User'
 import { Anchor } from './components/util/Anchor'
 import Catalog from './components/catalog/Catalog'
+import  LootInfo  from './components/loot/LootInfo'
+import  Purchase  from './components/order/Purchase'
+import CreateLoot from './components/util/CreateLoot'
 
 
 function App() {
@@ -23,8 +26,10 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/loots' element={<PrivateRoute><Catalog endpointSuffix={''}/></PrivateRoute>} />
-          {/* <Route path='/loots/create' element={<PrivateRoute><CreateItem /></PrivateRoute>} /> */}
+          <Route path='/loots/:id' element={<PrivateRoute><LootInfo/></PrivateRoute>} />
+          <Route path='/purchase/:id' element={<PrivateRoute><Purchase/></PrivateRoute>} />
           <Route path='/me' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
+          <Route path='/me/add' element={<PrivateRoute><CreateLoot /></PrivateRoute>} />
           <Route path='/users/:id' element={<PrivateRoute><User/></PrivateRoute>} />
           <Route path='/admin' element={<PrivateRoute><AdminTable /></PrivateRoute>} />
           {<Route path="*" element={<Navigate to='/error'/>} />}

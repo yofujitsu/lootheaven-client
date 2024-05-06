@@ -1,0 +1,33 @@
+/* Применяем стили для таблицы */
+.table-custom {
+    background-color: rgba(20, 16, 16, 0.1); /* Прозрачный фон */
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid #5865F2; /* Голубая рамка */
+    border-radius: 16px; /* Скругление углов таблицы */
+    overflow: hidden; /* Скрытие выходящих за границы элементов (для скругления строк) */
+}
+
+.table-custom th,
+.table-custom td {
+    padding: 12px 24px; /* Увеличиваем отступы для всех ячеек */
+    border-right: 1px solid rgba(20, 16, 16, 0.2); /* Стилизация границ между ячейками */
+}
+
+.table-custom th:last-child,
+.table-custom td:last-child {
+    border-right: none; /* Убираем границу у последней колонки */
+}
+
+.table-custom tr {
+    background-color: rgba(20, 16, 16, 0.1); /* Прозрачный фон для строк */
+}
+
+.table-custom tbody tr:hover {
+    background-color: rgba(20, 16, 16, 0.2); /* Фон при наведении */
+}
+
+svg {
+    color: #fff;
+    width: 40px;
+}

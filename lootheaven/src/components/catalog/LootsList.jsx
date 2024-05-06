@@ -57,7 +57,7 @@ export const productSVGs = {
   function LootsList({ endpointSuffix, selectedProduct, selectedType }) {
     const { loots, loading, error } = useLoots(endpointSuffix);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div>Загрузка...</div>;
     if (error) return <div>Тут пусто...</div>;
 
     const filteredLoots = loots.filter(loot => {

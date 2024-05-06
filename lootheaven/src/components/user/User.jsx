@@ -7,16 +7,18 @@ function User() {
     const { id } = useParams(); // Получение userId из параметров маршрута
     const { user, loading, error } = useUser(id); // Преобразование id в число и передача в useUser
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div style={{color: '#fff'}}><b>Error: {error.toString()}</b></div>;
-    if (!user) return <div style={{color: '#fff'}}><b>No user data available.</b></div>;
+    if (loading) return <div>Загрузка...</div>;
+    if (error) return <div>Ошибка загрузки данных.</div>;
+    if (!user) return <div>Не найдено данных пользователя.</div>;
 
     return (
-        <div style={{display: 'flex', margin: '1em', alignItems: 'center', flexDirection: 'column', color: '#fff'}}>
+        <div style={{display: 'flex', marginTop: '1em', alignSelf: 'center', alignItems: 'center', flexDirection: 'column', color: '#fff', width: '70%'}}>
             <h1>Это страница {user.username}</h1>
             <img src={user.avatar} alt="User Avatar" /> {/* Добавьте атрибут alt для изображения */}
-            <p>Количество сделок: {user.dealsCount}</p>
+            <p><b>Количество сделок: {user.dealsCount}</b></p>
+            <h3>Товары {user.username}</h3>
             <LootsList endpointSuffix={id}/>
+            <img src='https://www.picng.com/upload/anime_girl/png_anime_girl_40811.png' style={{ width: '30%', marginTop: '2em'}}></img>
         </div>
     );
 }

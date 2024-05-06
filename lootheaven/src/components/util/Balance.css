@@ -1,0 +1,28 @@
+.form-inline {
+    display: flex;
+    align-items: center;
+}
+
+.input-group {
+    flex-grow: 1;
+}
+
+.round-button {
+    width: 50px; /* Установите размер кнопки */
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin-left: 10px; /* Расстояние между инпутом и кнопкой */
+}
+
+.round-button .btn-success {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}

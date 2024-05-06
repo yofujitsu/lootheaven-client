@@ -1,0 +1,20 @@
+.select-custom {
+    background-color: rgba(255, 255, 255, 0.2); /* Прозрачный фон */
+    border: 2px solid #5865F2; /* Обводка синего цвета */
+    color: white; /* Белый текст */
+    padding: 10px 15px; /* Паддинг для улучшения визуального оформления */
+    border-radius: 5px; /* Скругление углов */
+    outline: none; /* Убираем стандартную рамку фокуса */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Небольшая тень для лучшего эффекта */
+    width: 250px; /* Фиксированная ширина */
+    margin-bottom: 20px; /* Отступ снизу */
+    cursor: pointer; /* Курсор в виде указателя */
+}
+
+.select-custom:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Чуть более яркий фон при наведении */
+}
+
+.select-custom:focus {
+    border-color: #7289da; /* Изменение цвета рамки при фокусе */
+}

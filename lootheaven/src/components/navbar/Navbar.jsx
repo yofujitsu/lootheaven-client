@@ -35,7 +35,8 @@ export function Navbar() {
                             </li>
                         ) : (
                             <li className="nav-item" style={{ display: 'flex', alignItems: 'center' }}>
-                                <b style={{color: '#fff'}}>Давно не виделись, {user.username}!</b>
+                                <b style={{color: '#fff'}}>Баланс: {user.balance} Coins</b>
+                                <b style={{color: '#fff', marginLeft: '1em'}}>Давно не виделись, {user.username}!</b>
                                 <Link to='/me' style={{ marginRight: '10px', marginLeft: '10px' }}>
                                     <img src={user.avatar} alt="Аватар" style={{ height: '40px', width: '40px', borderRadius: '50%' }} />
                                 </Link>
