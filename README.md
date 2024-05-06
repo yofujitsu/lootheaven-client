@@ -1,3 +1,4 @@
+# lootheaven - веб-приложение для покупки игровых услуг и диджитал-сервисов
 ![image](https://github.com/yofujitsu/lootheaven-client/assets/78373273/ad497b1c-be4c-43a3-8803-af4eadc1e1e9)
 ![image](https://github.com/yofujitsu/lootheaven-client/assets/78373273/c88f5783-bfa5-41f4-97c0-bfd2093ca4a5)
 
