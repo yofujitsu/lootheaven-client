@@ -6,8 +6,12 @@ export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isLoading, setIsLoading] = useState(true); // Добавляем состояние загрузки
 
+
+
     useEffect(() => {
-        fetch('http://localhost:8082/auth/status', { credentials: 'include' })
+        
+        const useFetch = async () => {
+            await fetch('http://localhost:8082/auth/status', { credentials: 'include' })
             .then(response => response.json())
             .then(data => {
                 setIsAuthenticated(data.isAuthenticated);
@@ -18,7 +22,7 @@ export const AuthProvider = ({ children }) => {
                 console.error('Error checking auth status:', error);
                 setIsLoading(false); // Также завершаем загрузку в случае ошибки
             });
-    }, []);
+    }; useFetch();}, []);
 
     return (
         <AuthContext.Provider value={{ isAuthenticated, isLoading }}>

@@ -83,9 +83,6 @@ export const productSVGs = {
                             <th>Цена</th>
                             <th>Описание товара</th>
                             <th>Продавец</th>
-                            if({endpointSuffix==='my'} {
-                                <th>Редактировать товар</th>
-                            })
                         </tr>
                     </thead>
                     <tbody>
