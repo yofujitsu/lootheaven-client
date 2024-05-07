@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         
         const useFetch = async () => {
-            await fetch('http://localhost:8082/auth/status', { credentials: 'include' })
+            await fetch('http://79.174.82.223:8082/auth/status', { credentials: 'include' })
             .then(response => response.json())
             .then(data => {
                 setIsAuthenticated(data.isAuthenticated);

@@ -1,7 +1,7 @@
 // import { Catalog } from './components/catalog/Catalog'
 import { Home } from './components/home/Home'
 import { Navbar } from './components/navbar/Navbar'
-import { Routes, Route, BrowserRouter, Navigate, redirect } from 'react-router-dom'
+import { Routes, Route, BrowserRouter, Navigate} from 'react-router-dom'
 import AdminTable from './components/admin/AdminTable'
 // import { CreateItem } from './components/catalog/CreateItem'
 import 'bootstrap/dist/css/bootstrap.min.css' 
@@ -13,8 +13,8 @@ import User from './components/user/User'
 import { Anchor } from './components/util/Anchor'
 import Catalog from './components/catalog/Catalog'
 import  LootInfo  from './components/loot/LootInfo'
-import  Purchase  from './components/order/Purchase'
 import CreateLoot from './components/util/CreateLoot'
+import Orders from './components/order/Orders'
 
 function App() {
   return (
@@ -23,11 +23,11 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/home' element={<Home />} />
-          <Route path='/home'element={<Home />} />
+          <Route path='/'element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/loots' element={<PrivateRoute><Catalog endpointSuffix={''}/></PrivateRoute>} />
           <Route path='/loots/:id' element={<PrivateRoute><LootInfo/></PrivateRoute>} />
-          <Route path='/purchase/:id' element={<PrivateRoute><Purchase/></PrivateRoute>} />
+          <Route path='/purchase/:id' element={<PrivateRoute><Orders/></PrivateRoute>} />
           <Route path='/me' element={<PrivateRoute><UserProfile /></PrivateRoute>} />
           <Route path='/me/add' element={<PrivateRoute><CreateLoot /></PrivateRoute>} />
           <Route path='/users/:id' element={<PrivateRoute><User/></PrivateRoute>} />

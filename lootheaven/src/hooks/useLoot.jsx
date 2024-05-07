@@ -6,7 +6,7 @@ function useLoot(endpointId = '') {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const endpoint = `http://localhost:8082/loots/info/${endpointId}`;
+        const endpoint = `http://79.174.82.223:8082/loots/info/${endpointId}`;
         fetch(endpoint, {
             credentials: 'include'
         })

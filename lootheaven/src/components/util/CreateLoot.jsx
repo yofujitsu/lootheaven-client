@@ -41,7 +41,7 @@ function CreateLoot() {
             published: new Date().toISOString()
         };
 
-        axios.post('http://localhost:8082/loots/add', dataToSubmit)
+        axios.post('http://79.174.82.223:8082/loots/add', dataToSubmit)
             .then(response => {
                 console.log("Data successfully sent!", response.data);
             })
