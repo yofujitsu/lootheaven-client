@@ -1,7 +1,7 @@
 // import { Catalog } from './components/catalog/Catalog'
 import { Home } from './components/home/Home'
 import { Navbar } from './components/navbar/Navbar'
-import { Routes, Route, BrowserRouter, Navigate, redirect } from 'react-router-dom'
+import { Routes, Route, BrowserRouter, Navigate, Redirect } from 'react-router-dom'
 import AdminTable from './components/admin/AdminTable'
 // import { CreateItem } from './components/catalog/CreateItem'
 import 'bootstrap/dist/css/bootstrap.min.css' 
