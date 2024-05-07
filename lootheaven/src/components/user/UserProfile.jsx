@@ -2,6 +2,7 @@ import useUserMe from '../../hooks/useUserMe';
 import BalanceTopUp from '../util/BalanceTopUp';
 import LootsList from '../catalog/LootsList';
 import Orders  from '../order/Orders';
+import EditProfile from './EditProfile';
 
 
 function UserProfile() {
@@ -11,6 +12,11 @@ function UserProfile() {
     if (error) return <div>Ошибка загрузки данных.</div>;
     if (!user) return <div>Не найдено данных пользователя.</div>;
 
+    if (!user.active) {
+        return <div style={{color: '#fff', textAlign: 'center', marginTop: '2em'}}>
+            Вы забанены по причине нарушений правил сайта. Свяжитесь с администрацией чтобы получить разбан.
+        </div>;
+    }
 
     return (
         <div style={{display: 'flex', marginTop: '1em', alignItems: 'center', flexDirection: 'column', color: '#fff'}}>
@@ -22,11 +28,15 @@ function UserProfile() {
                             <h5><b>email: {user.email}</b></h5>
                             <h5><b>Количество сделок: {user.dealsCount}</b></h5>
                             <h5><b>Количество покупок: {user.ordersCount}</b></h5>
+                            <EditProfile/>
                     </div> 
                     </div>
                     <div className='row d-flex justify-content-center'>
                         <h3 align='center'>Привет, {user.username}! Давно не виделись!</h3>
                         <div className='col d-flex justify-content-around align-items-center'>
+                            {user.role === 'ADMIN' && (
+                            <a className="btn btn-success" href='/admin'>Панель администратора</a>
+                            )}    
                             <a className='btn btn-success' href='/me/add' style={{width: '30%'}}>Создать товар</a>
                             <BalanceTopUp/>
                         </div>

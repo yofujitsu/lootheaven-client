@@ -39,7 +39,7 @@ export default function Orders({endpointSuffix}) {
                     return (
                         <tr key={order.id}>
                             <td>{type}</td>
-                            <td>{order.lootId}</td>
+                            <td><a href={`/loots/${order.lootId}`}>{order.lootId}</a></td>
                             <td>{order.cost} Коинов</td>
                             <td>{formatDate(order.orderDate)}</td>
                             <td><a href={`/users/${counterpartyId}`}>Контрагент заказа</a></td> 

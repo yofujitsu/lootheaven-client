@@ -2,7 +2,7 @@
 import { Home } from './components/home/Home'
 import { Navbar } from './components/navbar/Navbar'
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
-import { AdminTable } from './components/admin/AdminTable'
+import AdminTable from './components/admin/AdminTable'
 // import { CreateItem } from './components/catalog/CreateItem'
 import 'bootstrap/dist/css/bootstrap.min.css' 
 import UserProfile from './components/user/UserProfile'

@@ -24,7 +24,7 @@ function LootInfo() {
             credentials: 'include' // При необходимости авторизации
         })
         .then(response => {
-            if (!response.ok) throw new Error('Не удалось осуществить покупку');
+            if (!response.ok) throw new Error('Что-то пошло не так...');
             return response.text(); // Ожидаем текстовый ответ
         })
         .then(contentUrl => {
@@ -39,7 +39,7 @@ function LootInfo() {
             alert('Покупка успешна');
         })
         .catch(error => {
-            alert('Ошибка покупки: ' + error.message);
+            alert('Ошибка покупки: ' + 'Что-то пошло не так..');
         });
     };
 
@@ -53,7 +53,9 @@ function LootInfo() {
             <p>Тип: {loot.type}</p>
             <p>Цена: {loot.price}</p>
             <p>Описание: {loot.description}</p>
-            <button className="btn btn-success" onClick={handlePurchase}>Приобрести</button>
+            {loot.status !== 'sold' && (
+                <button className="btn btn-success" onClick={handlePurchase}>Приобрести</button>
+            )}
             <div>
             <a className="btn btn-danger mt-3" href='/loots'>Обратно в каталог</a>
             </div>
