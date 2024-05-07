@@ -1,7 +1,7 @@
 // import { Catalog } from './components/catalog/Catalog'
 import { Home } from './components/home/Home'
 import { Navbar } from './components/navbar/Navbar'
-import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
+import { Routes, Route, BrowserRouter, Navigate, redirect } from 'react-router-dom'
 import AdminTable from './components/admin/AdminTable'
 // import { CreateItem } from './components/catalog/CreateItem'
 import 'bootstrap/dist/css/bootstrap.min.css' 
@@ -16,14 +16,14 @@ import  LootInfo  from './components/loot/LootInfo'
 import  Purchase  from './components/order/Purchase'
 import CreateLoot from './components/util/CreateLoot'
 
-
 function App() {
   return (
     <div className="d-flex flex-column min-vh-100"> 
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/home' element={<Home />} />
+          <Redirect exact from="/" to="/home" />
+          <Route path='/home'element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/loots' element={<PrivateRoute><Catalog endpointSuffix={''}/></PrivateRoute>} />
           <Route path='/loots/:id' element={<PrivateRoute><LootInfo/></PrivateRoute>} />
