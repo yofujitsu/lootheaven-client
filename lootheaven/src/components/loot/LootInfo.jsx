@@ -15,7 +15,7 @@ function LootInfo() {
         if (!isConfirmed) return;
 
         // POST-запрос для осуществления покупки
-        fetch(`http://79.174.82.223:8082/purchase/${loot.id}`, {
+        fetch(`http://213.139.208.110:8082/purchase/${loot.id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

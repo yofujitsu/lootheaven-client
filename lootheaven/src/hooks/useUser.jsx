@@ -15,7 +15,7 @@ const useUser = (userId) => {
 
         setLoading(true); // Переустанавливаем состояние загрузки перед новым запросом
         const abortController = new AbortController(); // Создание контроллера для отмены запроса
-        const endpoint = `http://79.174.82.223:8082/users/${encodeURIComponent(Number(userId))}`;
+        const endpoint = `http://213.139.208.110:8082/users/${encodeURIComponent(Number(userId))}`;
 
         fetch(endpoint, {
             credentials: 'include',

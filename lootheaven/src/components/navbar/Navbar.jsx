@@ -27,7 +27,7 @@ export function Navbar() {
                         {!isAuthenticated ? (
                             <li className="nav-item">
                                 <button className="btn btn-dark" type="button">
-                                    <a className="nav-link" href='http://79.174.82.223:8082/oauth2/authorization/discord' style={{ color: '#fff', alignItems: 'center' }}>
+                                    <a className="nav-link" href='http://213.139.208.110:8082/oauth2/authorization/discord' style={{ color: '#fff', alignItems: 'center' }}>
                                         <b>Войти с Discord</b>
                                         <FontAwesomeIcon icon={faDiscord} style={{ fontSize: '25px', color: 'white', marginLeft: '10px' }} />
                                     </a>

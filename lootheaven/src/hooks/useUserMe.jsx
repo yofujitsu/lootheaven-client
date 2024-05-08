@@ -6,7 +6,7 @@ const useUserMe = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const endpoint = 'http://79.174.82.223:8082/users/me';
+        const endpoint = 'http://213.139.208.110:8082/users/me';
 
         fetch(endpoint, {
             credentials: 'include'

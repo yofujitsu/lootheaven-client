@@ -11,7 +11,7 @@ function BalanceTopUp() {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (window.confirm("Вы точно хотите пополнить баланс?")) {
-            fetch(`http://79.174.82.223:8082/users/balance?amount=${amount}`, {
+            fetch(`http://213.139.208.110:8082/users/balance?amount=${amount}`, {
                 method: 'PATCH',
                 credentials: 'include',
                 headers: {

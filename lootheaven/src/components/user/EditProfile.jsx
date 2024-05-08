@@ -17,7 +17,7 @@ function EditProfile() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const payload = { username, avatar };
-        fetch('http://79.174.82.223:8082/users/edit/me', {
+        fetch('http://213.139.208.110:8082/users/edit/me', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
