@@ -12,10 +12,7 @@ export const AuthProvider = ({ children }) => {
         
         const useFetch = async () => {
             await fetch('http://213.139.208.110:8082/auth/status', { credentials: 'include', mode: 'no-cors', headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-
+                'Access-Control-Allow-Origin': '*'
             }, })
             .then(response => response.json())
             .then(data => {
