@@ -19,6 +19,10 @@ const useUser = (userId) => {
 
         fetch(endpoint, {
             credentials: 'include',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                "Content-Type": "application/json" 
+            },
             signal: abortController.signal
         })
         .then(response => {

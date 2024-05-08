@@ -21,7 +21,8 @@ function EditProfile() {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'Access-Control-Allow-Origin': '*',
             },
             credentials: 'include',
             body: JSON.stringify(payload)

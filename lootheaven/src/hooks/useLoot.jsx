@@ -8,7 +8,11 @@ function useLoot(endpointId = '') {
     useEffect(() => {
         const endpoint = `http://213.139.208.110:8082/loots/info/${endpointId}`;
         fetch(endpoint, {
-            credentials: 'include'
+            credentials: 'include',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                "Content-Type": "application/json" 
+            },
         })
         .then(response => {
             if (!response.ok) {

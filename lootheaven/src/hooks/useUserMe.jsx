@@ -9,7 +9,12 @@ const useUserMe = () => {
         const endpoint = 'http://213.139.208.110:8082/users/me';
 
         fetch(endpoint, {
-            credentials: 'include'
+            credentials: 'include',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                "Content-Type": "application/json" 
+            },
+            
         })
         .then(response => {
             if (!response.ok) {
