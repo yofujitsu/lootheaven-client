@@ -11,7 +11,12 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         
         const useFetch = async () => {
-            await fetch('http://213.139.208.110:8082/auth/status', { credentials: 'include' })
+            await fetch('http://213.139.208.110:8082/auth/status', { credentials: 'include', mode: 'no-cors', headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+
+            }, })
             .then(response => response.json())
             .then(data => {
                 setIsAuthenticated(data.isAuthenticated);

@@ -42,6 +42,7 @@ function CreateLoot() {
         };
 
         axios.post('http://213.139.208.110:8082/loots/add', dataToSubmit, {
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',

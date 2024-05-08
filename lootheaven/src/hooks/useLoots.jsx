@@ -8,6 +8,7 @@ function useLoots(endpointSuffix = '') {
     useEffect(() => {
         const endpoint = `http://213.139.208.110:8082/loots${endpointSuffix ? `/${endpointSuffix}` : ''}`;
         fetch(endpoint, {
+            mode: 'no-cors',
             credentials: 'include',
             headers: {
                 'Access-Control-Allow-Origin': '*',

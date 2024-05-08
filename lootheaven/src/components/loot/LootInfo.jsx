@@ -17,6 +17,7 @@ function LootInfo() {
         // POST-запрос для осуществления покупки
         fetch(`http://213.139.208.110:8082/purchase/${loot.id}`, {
             method: 'POST',
+            mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',

@@ -19,6 +19,7 @@ function EditProfile() {
         const payload = { username, avatar };
         fetch('http://213.139.208.110:8082/users/edit/me', {
             method: 'PATCH',
+            mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',

@@ -13,6 +13,7 @@ function BalanceTopUp() {
         if (window.confirm("Вы точно хотите пополнить баланс?")) {
             fetch(`http://213.139.208.110:8082/users/balance?amount=${amount}`, {
                 method: 'PATCH',
+                mode: 'no-cors',
                 credentials: 'include',
                 headers: {
                     'Access-Control-Allow-Origin': '*',
