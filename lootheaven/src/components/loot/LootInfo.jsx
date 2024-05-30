@@ -21,11 +21,7 @@ function LootInfo() {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-<<<<<<< HEAD
 //                 'Access-Control-Allow-Origin': 'http://147.45.246.193:5173',
-=======
-                'Access-Control-Allow-Origin': '*',
->>>>>>> 5f3819e3411c4d60ec65ecc451617797c5583724
 
             },
             credentials: 'include' // При необходимости авторизации

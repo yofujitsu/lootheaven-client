@@ -11,13 +11,8 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         
         const useFetch = async () => {
-<<<<<<< HEAD
             await fetch('http://147.45.246.193:8082/auth/status', { credentials: 'include', headers: {
 //                 'Access-Control-Allow-Origin': 'http://147.45.246.193:5173',
-=======
-            await fetch('http://213.139.208.110:8082/auth/status', { credentials: 'include', mode: 'no-cors', headers: {
-                'Access-Control-Allow-Origin': '*'
->>>>>>> 5f3819e3411c4d60ec65ecc451617797c5583724
             }, })
             .then(response => response.json())
             .then(data => {
