@@ -23,8 +23,8 @@ export function AdminTable() {
         }
 
         
-        const fetchUsers = fetch('http://213.139.208.110:8082/users/all');
-        const fetchOrders = fetch('http://213.139.208.110:8082/purchase/all');
+        const fetchUsers = fetch('http://147.45.246.193:8082/users/all');
+        const fetchOrders = fetch('http://147.45.246.193:8082/purchase/all');
 
         Promise.all([fetchUsers, fetchOrders])
             .then(responses => Promise.all(responses.map(res => res.json())))
@@ -41,10 +41,10 @@ export function AdminTable() {
     }, [user, userLoading, userError, navigate]);
 
     const handleBan = (userId) => {
-        fetch(`http://213.139.208.110:8082/admin/ban/${userId}`, { method: 'POST',
+        fetch(`http://147.45.246.193:8082/admin/ban/${userId}`, { method: 'POST',
         credentials: 'include',
         headers: {
-            // 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173',
+            // 'Access-Control-Allow-Origin': 'http://147.45.246.193:5173',
             "Content-Type": "application/json",
             'Accept': 'application/json', 
         }, 
@@ -54,10 +54,10 @@ export function AdminTable() {
     };
 
     const handleUnban = (userId) => {
-        fetch(`http://213.139.208.110:8082/admin/unban/${userId}`, { method: 'POST',
+        fetch(`http://147.45.246.193:8082/admin/unban/${userId}`, { method: 'POST',
         credentials: 'include',
         headers: {
-            // 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173',
+            // 'Access-Control-Allow-Origin': 'http://147.45.246.193:5173',
             "Content-Type": "application/json",
             'Accept': 'application/json',
         },

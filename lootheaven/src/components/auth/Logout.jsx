@@ -1,5 +1,5 @@
 export const Logout = () => {
-    fetch('http://213.139.208.110:8082/logout', { method: 'POST', credentials: 'include' })
+    fetch('http://147.45.246.193:8082/logout', { method: 'POST', credentials: 'include' })
         .then(() => {
             window.location.href = "/home"; 
             window.location.reload;

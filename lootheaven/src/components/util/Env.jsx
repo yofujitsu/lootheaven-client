@@ -6,7 +6,7 @@ const prod = {
 
 const dev = {
     url: {
-        API_BASE_URL: 'http://213.139.208.110:8082'
+        API_BASE_URL: 'http://147.45.246.193:8082'
     }
 }
 

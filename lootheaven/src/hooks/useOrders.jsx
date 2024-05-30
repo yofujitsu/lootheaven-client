@@ -6,12 +6,12 @@ function useOrders(endpointSuffix) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const endpoint = `http://213.139.208.110:8082/purchase/${endpointSuffix}`;
+        const endpoint = `http://147.45.246.193:8082/purchase/${endpointSuffix}`;
         fetch(endpoint, {
             
             credentials: 'include',
             headers: {
-//                 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173',
+//                 'Access-Control-Allow-Origin': 'http://147.45.246.193:5173',
                 "Content-Type": "application/json" 
             },
             // для отправки cookies, если требуется авторизация

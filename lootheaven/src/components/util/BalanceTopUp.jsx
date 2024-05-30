@@ -11,12 +11,12 @@ function BalanceTopUp() {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (window.confirm("Вы точно хотите пополнить баланс?")) {
-            fetch(`http://213.139.208.110:8082/users/balance?amount=${amount}`, {
+            fetch(`http://147.45.246.193:8082/users/balance?amount=${amount}`, {
                 method: 'PATCH',
                 
                 credentials: 'include',
                 headers: {
-    //                 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173',
+    //                 'Access-Control-Allow-Origin': 'http://147.45.246.193:5173',
                     "Content-Type": "application/json" 
                 },
                 body: JSON.stringify({ amount }) 
@@ -29,7 +29,7 @@ function BalanceTopUp() {
             })
             .then(data => {
                 alert('Баланс успешно пополнен!');
-                window.location.href = "http://213/139/208.110:5173/me"; 
+                window.location.href = "http://147.45.246.193:5173/me"; 
             })
             .catch(error => {
                 console.error('Error updating balance:', error);

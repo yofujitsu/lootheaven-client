@@ -41,19 +41,19 @@ function CreateLoot() {
             published: new Date().toISOString()
         };
 
-        axios.post('http://213.139.208.110:8082/loots/add', dataToSubmit, {
+        axios.post('http://147.45.246.193:8082/loots/add', dataToSubmit, {
         
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            // 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173'
+            // 'Access-Control-Allow-Origin': 'http://147.45.246.193:5173'
         },
         withCredentials: true
         })
         .then(response => {
             console.log("Data successfully sent!", response.data);
             alert('Товар успешно размещен!');
-            window.location.href = "http://213.139.208.110:5173/me"; 
+            window.location.href = "http://147.45.246.193:5173/me"; 
         })
         .catch(error => {
             console.error("There was an error!", error);

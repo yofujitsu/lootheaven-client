@@ -17,12 +17,12 @@ function EditProfile() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const payload = { username, avatar };
-        fetch('http://213.139.208.110:8082/users/edit/me', {
+        fetch('http://147.45.246.193:8082/users/edit/me', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-//                 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173',
+//                 'Access-Control-Allow-Origin': 'http://147.45.246.193:5173',
             },
             credentials: 'include',
             body: JSON.stringify(payload)

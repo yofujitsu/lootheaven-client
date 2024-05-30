@@ -15,13 +15,13 @@ const useUser = (userId) => {
 
         setLoading(true); // Переустанавливаем состояние загрузки перед новым запросом
         const abortController = new AbortController(); // Создание контроллера для отмены запроса
-        const endpoint = `http://213.139.208.110:8082/users/${encodeURIComponent(Number(userId))}`;
+        const endpoint = `http://147.45.246.193:8082/users/${encodeURIComponent(Number(userId))}`;
 
         fetch(endpoint, {
             
             credentials: 'include',
             headers: {
-//                 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173',
+//                 'Access-Control-Allow-Origin': 'http://147.45.246.193:5173',
                 "Content-Type": "application/json" 
             },
             signal: abortController.signal

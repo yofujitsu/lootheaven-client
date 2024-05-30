@@ -15,12 +15,12 @@ function LootInfo() {
         if (!isConfirmed) return;
 
         // POST-запрос для осуществления покупки
-        fetch(`http://213.139.208.110:8082/purchase/${loot.id}`, {
+        fetch(`http://147.45.246.193:8082/purchase/${loot.id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-//                 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173',
+//                 'Access-Control-Allow-Origin': 'http://147.45.246.193:5173',
 
             },
             credentials: 'include' // При необходимости авторизации
