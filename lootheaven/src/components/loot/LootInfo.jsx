@@ -19,7 +19,9 @@ function LootInfo() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+//                 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173',
+
             },
             credentials: 'include' // При необходимости авторизации
         })

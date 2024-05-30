@@ -8,7 +8,13 @@ function useOrders(endpointSuffix) {
     useEffect(() => {
         const endpoint = `http://213.139.208.110:8082/purchase/${endpointSuffix}`;
         fetch(endpoint, {
-            credentials: 'include' // для отправки cookies, если требуется авторизация
+            
+            credentials: 'include',
+            headers: {
+//                 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173',
+                "Content-Type": "application/json" 
+            },
+            // для отправки cookies, если требуется авторизация
         })
         .then(response => {
             if (!response.ok) {

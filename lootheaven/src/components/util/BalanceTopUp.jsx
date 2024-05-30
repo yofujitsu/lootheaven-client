@@ -13,9 +13,11 @@ function BalanceTopUp() {
         if (window.confirm("Вы точно хотите пополнить баланс?")) {
             fetch(`http://213.139.208.110:8082/users/balance?amount=${amount}`, {
                 method: 'PATCH',
+                
                 credentials: 'include',
                 headers: {
-                    'Content-Type': 'application/json'
+    //                 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173',
+                    "Content-Type": "application/json" 
                 },
                 body: JSON.stringify({ amount }) 
             })
@@ -27,7 +29,7 @@ function BalanceTopUp() {
             })
             .then(data => {
                 alert('Баланс успешно пополнен!');
-                window.location.href = "http://localhost:5173/me"; 
+                window.location.href = "http://213/139/208.110:5173/me"; 
             })
             .catch(error => {
                 console.error('Error updating balance:', error);

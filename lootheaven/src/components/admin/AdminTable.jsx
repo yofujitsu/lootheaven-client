@@ -21,6 +21,7 @@ export function AdminTable() {
             navigate('/error');
             return;
         }
+
         
         const fetchUsers = fetch('http://213.139.208.110:8082/users/all');
         const fetchOrders = fetch('http://213.139.208.110:8082/purchase/all');
@@ -41,7 +42,12 @@ export function AdminTable() {
 
     const handleBan = (userId) => {
         fetch(`http://213.139.208.110:8082/admin/ban/${userId}`, { method: 'POST',
-        credentials: 'include' 
+        credentials: 'include',
+        headers: {
+            // 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173',
+            "Content-Type": "application/json",
+            'Accept': 'application/json', 
+        }, 
          })
             .then(() => alert('Пользователь забанен!'))
             .catch(error => alert('Ошибка бана: ' + error.message));
@@ -49,7 +55,12 @@ export function AdminTable() {
 
     const handleUnban = (userId) => {
         fetch(`http://213.139.208.110:8082/admin/unban/${userId}`, { method: 'POST',
-        credentials: 'include' 
+        credentials: 'include',
+        headers: {
+            // 'Access-Control-Allow-Origin': 'http://213.139.208.110:5173',
+            "Content-Type": "application/json",
+            'Accept': 'application/json',
+        },
          })
             .then(() => alert('Пользователь разбанен!'))
             .catch(error => alert('Ошибка разбана: ' + error.message));
