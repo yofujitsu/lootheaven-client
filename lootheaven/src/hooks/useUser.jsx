@@ -18,10 +18,17 @@ const useUser = (userId) => {
         const endpoint = `http://147.45.246.193:8082/users/${encodeURIComponent(Number(userId))}`;
 
         fetch(endpoint, {
+<<<<<<< HEAD
             
             credentials: 'include',
             headers: {
 //                 'Access-Control-Allow-Origin': 'http://147.45.246.193:5173',
+=======
+            mode: 'no-cors',
+            credentials: 'include',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+>>>>>>> 5f3819e3411c4d60ec65ecc451617797c5583724
                 "Content-Type": "application/json" 
             },
             signal: abortController.signal

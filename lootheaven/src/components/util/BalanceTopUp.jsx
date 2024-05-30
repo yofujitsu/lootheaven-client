@@ -13,10 +13,17 @@ function BalanceTopUp() {
         if (window.confirm("Вы точно хотите пополнить баланс?")) {
             fetch(`http://147.45.246.193:8082/users/balance?amount=${amount}`, {
                 method: 'PATCH',
+<<<<<<< HEAD
                 
                 credentials: 'include',
                 headers: {
     //                 'Access-Control-Allow-Origin': 'http://147.45.246.193:5173',
+=======
+                mode: 'no-cors',
+                credentials: 'include',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+>>>>>>> 5f3819e3411c4d60ec65ecc451617797c5583724
                     "Content-Type": "application/json" 
                 },
                 body: JSON.stringify({ amount }) 
